@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
+using static System.Console;
+using static SampleConsole.Math;
 
 namespace SampleConsole
 {
@@ -8,7 +10,8 @@ namespace SampleConsole
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            WriteLine($"Max Value Interger is {Int32.MaxValue}");
+            RunFactorial();
 
             // loop through the assemblies that this app references
             foreach (var r in Assembly.GetEntryAssembly()
@@ -31,6 +34,28 @@ namespace SampleConsole
                 arg1: methodCount,
                 arg2: r.Name);
             }
+        }
+
+        static void RunFactorial()
+        {
+            bool isNumber;
+            do
+            {
+                Write("Enter a number: ");
+                isNumber = long.TryParse(
+                ReadLine(), out long number);
+                if (isNumber)
+                {
+                    WriteLine(
+                    $"{number:N0}! = {Factorial(number.ToString()):N0}");
+                }
+                else
+                {
+                    WriteLine("You did not enter a valid number!");
+                    ReadLine();
+                }
+            }
+            while (isNumber);
         }
     }
 }
