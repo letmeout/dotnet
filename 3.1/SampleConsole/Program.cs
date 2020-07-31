@@ -10,12 +10,9 @@ namespace SampleConsole
     {
         static void Main(string[] args)
         {
-<<<<<<< HEAD
-            Console.WriteLine($"There are {args.Length} arguments.");
-=======
+
             WriteLine($"Max Value Interger is {Int32.MaxValue}");
             RunFactorial();
->>>>>>> master
 
             // loop through the assemblies that this app references
             foreach (var r in Assembly.GetEntryAssembly()
