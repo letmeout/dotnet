@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using static System.Console;
@@ -10,8 +12,11 @@ namespace SampleConsole
     {
         static void Main(string[] args)
         {
-
+            Trace.Listeners.Add(new TextWriterTraceListener(File.CreateText("log.txt")));
+            Trace.AutoFlush = true;
             WriteLine($"Max Value Interger is {Int32.MaxValue}");
+            Debug.WriteLine("Debug says, I am watching!");
+            Trace.WriteLine("Trace says, I am watching!");
             RunFactorial();
 
             // loop through the assemblies that this app references
