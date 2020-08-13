@@ -37,8 +37,6 @@ namespace SampleConsole
             Trace.WriteLineIf(ts.TraceInfo, "Trace information");
             Trace.WriteLineIf(ts.TraceVerbose, "Trace verbose");
 
-            RunFactorial();
-
             // loop through the assemblies that this app references
             foreach (var r in Assembly.GetEntryAssembly()
             .GetReferencedAssemblies())
@@ -76,6 +74,8 @@ namespace SampleConsole
             {
                 Console.WriteLine($"{a} + {b} does NOT equal 0.3, it equals to {a + b}");
             }
+
+            RunFactorial();
 
         }
 
