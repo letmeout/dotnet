@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleMVC", "..\3.1\SampleM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleWebApp", "..\3.1\SampleWebApp\SampleWebApp.csproj", "{3A9A5571-15D2-49A9-B591-430ED1C5F0FE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleClassLibrary", "..\3.1\SampleClassLibrary\SampleClassLibrary.csproj", "{D009E5C2-05E8-4FB8-B81F-9D0EDD157303}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3A9A5571-15D2-49A9-B591-430ED1C5F0FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A9A5571-15D2-49A9-B591-430ED1C5F0FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A9A5571-15D2-49A9-B591-430ED1C5F0FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D009E5C2-05E8-4FB8-B81F-9D0EDD157303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D009E5C2-05E8-4FB8-B81F-9D0EDD157303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D009E5C2-05E8-4FB8-B81F-9D0EDD157303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D009E5C2-05E8-4FB8-B81F-9D0EDD157303}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

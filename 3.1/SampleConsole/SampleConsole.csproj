@@ -11,4 +11,8 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SampleClassLibrary\SampleClassLibrary.csproj" />
+  </ItemGroup>
 </Project>

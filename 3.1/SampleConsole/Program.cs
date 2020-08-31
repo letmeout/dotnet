@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Microsoft.Extensions.Configuration;
+using SampleClassLibrary;
 using static System.Console;
 using static SampleConsole.Math;
 
@@ -75,8 +76,10 @@ namespace SampleConsole
                 Console.WriteLine($"{a} + {b} does NOT equal 0.3, it equals to {a + b}");
             }
 
-            RunFactorial();
-
+            //RunFactorial();
+            var problem = new JourneyProblem();
+            var locations = problem.PrepareData();
+            problem.GetShortestFullPath(locations);
         }
 
         static void RunFactorial()
