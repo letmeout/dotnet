@@ -54,7 +54,7 @@ namespace SampleClassLibrary
         public List<Distance> GetShortestFullPath(List<Location> Locations, Location BeginFrom = null)
         {
             var paths = new List<List<Distance>>();
-
+            var start = DateTime.Now;
             if (BeginFrom != null)
             {
                 if (!Locations.Contains(BeginFrom))
@@ -69,12 +69,15 @@ namespace SampleClassLibrary
                 paths = Locations.SelectMany(l => GetDistanceList(l, Locations)).ToList();
             }
 
-            var index = 0;
-            foreach (var path in paths)
-            {
-                index++;
-                Console.WriteLine($"{index}: {string.Join(", ", path.SelectMany(i => i.Locations).Select(j => j.Name))}");
-            }
+            var spend = DateTime.Now - start;
+            Console.WriteLine($"Calculating Journey Problem for 5 Locations spend {spend.TotalMilliseconds} ms.");
+
+            //////var index = 0;
+            //////foreach (var path in paths)
+            //////{
+            //////    index++;
+            //////    Console.WriteLine($"{index}: {string.Join(", ", path.SelectMany(i => i.Locations).Select(j => j.Name))}");
+            //////}
 
             var min = paths.Min(i => i.Sum(j => j.MileAway));
             var shortestPath = paths.Where(i => i.Sum(j => j.MileAway) == min).FirstOrDefault();
@@ -86,6 +89,7 @@ namespace SampleClassLibrary
         {
             paths = paths ?? new List<List<Distance>>();
             path = path ?? new List<Distance>();
+            locations = locations.Except(new [] {from}).ToList();
 
             foreach (var distance in from.Distances)
             {
@@ -98,7 +102,7 @@ namespace SampleClassLibrary
                     currentPath.Add(distance);
                     GetDistanceList(to, locations, paths, currentPath);
                 }
-                else if (currentPath.SelectMany(i => i.Locations).Count() == (locations.Count() - 1) * 2)
+                else if (!locations.Any())
                 {
                     paths.Add(currentPath);
                     break;

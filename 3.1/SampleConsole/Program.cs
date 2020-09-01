@@ -79,7 +79,7 @@ namespace SampleConsole
             //RunFactorial();
             var problem = new JourneyProblem();
             var locations = problem.PrepareData();
-            problem.GetShortestFullPath(locations);
+            var list = problem.GetShortestFullPath(locations);
         }
 
         static void RunFactorial()

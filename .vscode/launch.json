@@ -92,6 +92,18 @@
             "stopAtEntry": false
         },
         {
+            "name": ".NET Core Launch (classlibrary)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            // If you have changed target frameworks, make sure to update the program path.
+            "program": "${workspaceFolder}/3.1/SampleConsole/bin/Debug/netcoreapp3.1/SampleClassLibrary.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/3.1/SampleClassLibrary",
+            // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
+            "stopAtEntry": false
+        },
+        {
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach",
@@ -104,6 +116,7 @@
             "configurations": [
                 ".NET Core Launch App (web)",
                 ".NET Core Launch MVC (web)",
+                ".NET Core Launch (classlibrary)",
                 ".NET Core Launch (console)"
             ]
         }
