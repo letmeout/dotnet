@@ -79,7 +79,16 @@ namespace SampleConsole
             //RunFactorial();
             var problem = new JourneyProblem();
             var locations = problem.PrepareData();
+
+            WriteLine("The fastest way to travel to Cities: ");
+            locations.ForEach(l => WriteLine(l.Name));
+
             var list = problem.GetShortestFullPath(locations);
+            
+            WriteLine("are: ");
+            list.ForEach(l => WriteLine(string.Join(", ", l.Locations.Select(i => i.Name))));
+
+            Console.ReadLine();
         }
 
         static void RunFactorial()
