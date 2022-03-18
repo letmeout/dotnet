@@ -1,7 +1,17 @@
+using SampleMVC.Service;
+using SampleMVC.BackgroundTask;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// builder.Services.AddHostedService<BackgroundPrinter>();
+// builder.Services.AddHostedService<DerivedBackgroundPrinter>();
+builder.Services.AddHostedService<TimedHostedService>();
+// builder.Services.AddHostedService<ConsumeScopedServiceHostedService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<IWorker, Worker>();
+builder.Services.AddScoped<IScopedProcessingService, ScopedProcessingService>();
 
 var app = builder.Build();
 
