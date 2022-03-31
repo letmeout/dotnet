@@ -1,49 +1,43 @@
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
-using SampleMVC.Service;
  
 namespace SampleMVC.BackgroundTask
 {
-    public class BackgroundPrinter : IHostedService
+    public class BackgroundPrinter : IHostedService, IDisposable
     {
-        //private readonly ILogger<BackgroundPrinter> logger;
-        private readonly IServiceProvider services;
+        private readonly ILogger<BackgroundPrinter> logger;
+        private Timer timer;
+        private int number;
  
-        // public BackgroundPrinter(IServiceProvider services, ILogger<BackgroundPrinter> logger)
-        // {
-        //     this.logger = logger;
-        //     this.services = services;
-        // }
-
-        public BackgroundPrinter(IServiceProvider services)
+        public BackgroundPrinter(ILogger<BackgroundPrinter> logger)
         {
-            this.services = services;
+            this.logger = logger;
         }
  
-        public async Task StartAsync(CancellationToken cancellationToken)
+        public void Dispose()
         {
-            using (var scope = services.CreateScope())
-            {
-                var worker = 
-                    scope.ServiceProvider
-                        .GetRequiredService<IWorker>();
-
-                await worker.DoWork(cancellationToken);
-            }
+            timer?.Dispose();
         }
  
-        public async Task StopAsync(CancellationToken cancellationToken)
+        public Task StartAsync(CancellationToken cancellationToken)
         {
-            using (var scope = services.CreateScope())
-            {
-                var scopedProcessingService = 
-                    scope.ServiceProvider
-                        .GetRequiredService<IScopedProcessingService>();
-
-                await scopedProcessingService.DoWork(cancellationToken);
-            }
+            timer = new Timer(o => {
+                Interlocked.Increment(ref number);
+                logger.LogInformation($"Printing the worker number {number}");
+            },
+            null,
+            TimeSpan.Zero,
+            TimeSpan.FromSeconds(5));
+ 
+            return Task.CompletedTask;
+        }
+ 
+        public Task StopAsync(CancellationToken cancellationToken)
+        {
+            return Task.CompletedTask;
         }
     }
 }

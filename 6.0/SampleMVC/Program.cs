@@ -4,8 +4,9 @@ using SampleMVC.BackgroundTask;
 var builder = WebApplication.CreateBuilder(args);
 
 // builder.Services.AddHostedService<BackgroundPrinter>();
+builder.Services.AddHostedService<BackgroundWorker>();
 // builder.Services.AddHostedService<DerivedBackgroundPrinter>();
-builder.Services.AddHostedService<TimedHostedService>();
+// builder.Services.AddHostedService<TimedHostedService>();
 // builder.Services.AddHostedService<ConsumeScopedServiceHostedService>();
 
 // Add services to the container.
