@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleConsole", "..\5.0\Sam
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleMVC", "..\5.0\SampleMVC\SampleMVC.csproj", "{34F8C135-0A4C-4A74-942D-1E0A20D5753B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleRazor", "..\6.0\SampleRazor\SampleRazor.csproj", "{41149BD6-40A3-4393-916D-75EDECE0AD53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleReact", "..\6.0\SampleReact\SampleReact.csproj", "{8E6C5D50-4118-4004-8B23-8208779C2FED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{34F8C135-0A4C-4A74-942D-1E0A20D5753B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34F8C135-0A4C-4A74-942D-1E0A20D5753B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34F8C135-0A4C-4A74-942D-1E0A20D5753B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41149BD6-40A3-4393-916D-75EDECE0AD53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41149BD6-40A3-4393-916D-75EDECE0AD53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41149BD6-40A3-4393-916D-75EDECE0AD53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41149BD6-40A3-4393-916D-75EDECE0AD53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E6C5D50-4118-4004-8B23-8208779C2FED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E6C5D50-4118-4004-8B23-8208779C2FED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E6C5D50-4118-4004-8B23-8208779C2FED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E6C5D50-4118-4004-8B23-8208779C2FED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
