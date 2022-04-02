@@ -15,6 +15,6 @@ namespace SampleRazor.Data
         {
         }
 
-        public DbSet<SampleRazor.Models.Movie> Movie { get; set; }
+        public DbSet<SampleRazor.Models.Movie> Movies { get; set; }
     }
 }

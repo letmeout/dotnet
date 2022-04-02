@@ -12,7 +12,7 @@ using SampleRazor.Data;
 namespace SampleRazor.Migrations
 {
     [DbContext(typeof(SampleRazorContext))]
-    [Migration("20220402032620_InitialCreate")]
+    [Migration("20220402060621_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -48,7 +48,7 @@ namespace SampleRazor.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Movie");
+                    b.ToTable("Movies");
                 });
 #pragma warning restore 612, 618
         }

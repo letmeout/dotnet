@@ -30,7 +30,7 @@ namespace SampleRazor.Pages.Movies
                 return NotFound();
             }
 
-            Movie = await _context.Movie.FirstOrDefaultAsync(m => m.ID == id);
+            Movie = await _context.Movies.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Movie == null)
             {
@@ -46,11 +46,11 @@ namespace SampleRazor.Pages.Movies
                 return NotFound();
             }
 
-            Movie = await _context.Movie.FindAsync(id);
+            Movie = await _context.Movies.FindAsync(id);
 
             if (Movie != null)
             {
-                _context.Movie.Remove(Movie);
+                _context.Movies.Remove(Movie);
                 await _context.SaveChangesAsync();
             }
 

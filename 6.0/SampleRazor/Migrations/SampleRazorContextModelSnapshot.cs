@@ -46,7 +46,7 @@ namespace SampleRazor.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Movie");
+                    b.ToTable("Movies");
                 });
 #pragma warning restore 612, 618
         }

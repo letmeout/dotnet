@@ -31,7 +31,7 @@ namespace SampleRazor.Pages.Movies
                 return NotFound();
             }
 
-            Movie = await _context.Movie.FirstOrDefaultAsync(m => m.ID == id);
+            Movie = await _context.Movies.FirstOrDefaultAsync(m => m.ID == id);
 
             if (Movie == null)
             {
@@ -72,7 +72,7 @@ namespace SampleRazor.Pages.Movies
 
         private bool MovieExists(int id)
         {
-            return _context.Movie.Any(e => e.ID == id);
+            return _context.Movies.Any(e => e.ID == id);
         }
     }
 }

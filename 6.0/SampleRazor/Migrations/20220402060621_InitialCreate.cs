@@ -10,7 +10,7 @@ namespace SampleRazor.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Movie",
+                name: "Movies",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
@@ -22,14 +22,14 @@ namespace SampleRazor.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Movie", x => x.ID);
+                    table.PrimaryKey("PK_Movies", x => x.ID);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Movie");
+                name: "Movies");
         }
     }
 }

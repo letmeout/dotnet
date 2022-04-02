@@ -36,7 +36,7 @@ namespace SampleRazor.Pages.Movies
                 return Page();
             }
 
-            _context.Movie.Add(Movie);
+            _context.Movies.Add(Movie);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
