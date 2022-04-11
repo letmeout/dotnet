@@ -49,7 +49,8 @@ namespace SampleRazor.Pages.Movies
                 return Page();
             }
 
-            _context.Attach(Movie).State = EntityState.Modified;
+            //_context.Attach(Movie).State = EntityState.Modified;
+            _context.Update(Movie);
 
             try
             {

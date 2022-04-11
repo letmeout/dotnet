@@ -50,7 +50,8 @@ namespace SampleRazor.Pages.Movies
 
             if (Movie != null)
             {
-                _context.Movies.Remove(Movie);
+                //_context.Movies.Remove(Movie);
+                _context.Remove(Movie);
                 await _context.SaveChangesAsync();
             }
 
